@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="aa6b6964-9ecf-4027-9f36-09486512c01d">
+    <database-info product="MySQL" version="5.7.4-m14" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="phalcon_test"/>
+    <table name="albums" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="artists_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="72" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="artists_id" unique="false" columns="artists_id"/>
+    </table>
+    <table name="artists" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="72" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="customers" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="document_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="customer_id" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="first_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="instructions" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="ENUM" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="birth_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" def="JzE5NzAtMDEtMDEn"/>
+      <column name="credit_line" sqlType="DECIMAL" precision="16" scale="2" nullable="true" jdbcType="3" def="MC4wMA=="/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="created_at_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="customers_credit_line_idx" unique="false" columns="credit_line"/>
+      <index name="customers_customer_id_idx" unique="false" columns="customer_id"/>
+      <index name="customers_document_id_idx" unique="false" columns="document_id"/>
+      <index name="customers_status_idx" unique="false" columns="status"/>
+    </table>
+    <table name="issue_1534" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="language" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="J2JiJw=="/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="brand" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sort" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id,language"/>
+      <index name="slug" unique="true" columns="slug"/>
+    </table>
+    <table name="issue_2019" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="column" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="m2m_parts" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="m2m_robots" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="m2m_robots_parts" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="robots_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="parts_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="robots_id,parts_id"/>
+    </table>
+    <table name="parts" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="robots_parts_ibfk_2" table="robots_parts" schema="" catalog="phalcon_test" columns="parts_id"/>
+    </table>
+    <table name="personas" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="cedula" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="tipo_documento_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombres" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="telefono" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="direccion" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fecha_nacimiento" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" def="JzE5NzAtMDEtMDEn"/>
+      <column name="ciudad_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="creado_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="cupo" sqlType="DECIMAL" precision="16" scale="2" nullable="false" jdbcType="3"/>
+      <column name="estado" sqlType="ENUM" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="cedula"/>
+      <index name="ciudad_id" unique="false" columns="ciudad_id"/>
+      <index name="estado" unique="false" columns="estado"/>
+      <index name="estado_2" unique="false" columns="estado,nombres"/>
+    </table>
+    <table name="personnes" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="cedula" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="tipo_documento_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombres" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="telefono" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="direccion" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fecha_nacimiento" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" def="JzE5NzAtMDEtMDEn"/>
+      <column name="ciudad_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="creado_at" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="cupo" sqlType="DECIMAL" precision="16" scale="2" nullable="false" jdbcType="3"/>
+      <column name="estado" sqlType="ENUM" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="cedula"/>
+      <index name="ciudad_id" unique="false" columns="ciudad_id"/>
+      <index name="cupo" unique="false" columns="cupo"/>
+      <index name="estado" unique="false" columns="estado"/>
+    </table>
+    <table name="prueba" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nombre" sqlType="VARCHAR" precision="120" scale="0" nullable="false" jdbcType="12"/>
+      <column name="estado" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="estado" unique="false" columns="estado"/>
+    </table>
+    <table name="robots" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="year" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="robots_parts_ibfk_1" table="robots_parts" schema="" catalog="phalcon_test" columns="robots_id"/>
+    </table>
+    <table name="robots_parts" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="robots_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="parts_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="robots_parts_ibfk_1" columns="robots_id" ref-table="robots" ref-schema="" ref-catalog="phalcon_test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="robots_parts_ibfk_2" columns="parts_id" ref-table="parts" ref-schema="" ref-catalog="phalcon_test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="songs" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="albums_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="72" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="albums_id" unique="false" columns="albums_id"/>
+    </table>
+    <table name="subscriptores" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="status" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tipo_documento" schema="" catalog="phalcon_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="detalle" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
